@@ -12,7 +12,8 @@ let play = document.getElementById('play');
 let countDown = document.getElementById('timer');
 let risultato = document.getElementById('resoult');
 let simonNumbers = document.getElementById('simon-numbers');
-let cover = document.getElementById('cover hidden');
+let quanti = document.getElementById('many')
+
 let saluto = 'Benvenuto a Simon, premi sul bottone per cominciare!';
 // saluto l'utente prima di coninciare la partita
 simonNumbers.innerHTML = saluto;
@@ -30,28 +31,35 @@ play.addEventListener('click', () => {
     const clock = setInterval(
         () => {
             if(seconds === 0){
+                let cover = document.querySelector('.cover.hidden')
+                cover.classList.remove('hidden');
                 simonNumbers.innerHTML = 'Tempo Scaduto!!!'
                 for(let i = 0; i < 5; i++){
                     let userInput = parseInt(prompt('Inserisci i numeri che hai visto: '));
                     userNum.push(userInput);
-
                     if(numbers.includes(userNum[i])){
                         score++
                         risultato.innerHTML = 'Numeri indovinati: ' + numChecked;
                         numChecked.push(userNum[i]);
                     }
                     risultato.innerHTML = 'Punteggio totale = ' + score;
+                    quanti.innerHTML = 'Hai indovinato i numeri: ' + numChecked;
                 }
                 clearInterval(clock);
             } else {
                 simonNumbers.innerHTML = numbers;
                 seconds--;
                 countDown.innerHTML = seconds;
+                if (seconds===0){
+                    simonNumbers.innerHTML='';
+                }
             }
         },
-        1000
-    )
+        100
+    );
+
     }
+
 );
 // Funzione che mette in un array 5 numeri
 function genArrRandomNum (minNum, maxNum, arrLenght) {
