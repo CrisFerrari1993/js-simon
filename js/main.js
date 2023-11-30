@@ -7,6 +7,18 @@ Il layout lo decidete voi.
 Non perdetevi solo nei suoi dettagli da subito, ma date priorità a farlo funzionare.
 Poi se volete lo abbellite quanto volete, quando funziona tutto.
 */
+// Funzione che mette in un array 5 numeri
+function genArrRandomNum (minNum, maxNum, arrLenght) {
+    //array da popolare 
+    let arr = [];
+    //ciclo che mi popolera l'array
+    while(arr.length < arrLenght) {
+        //generezione numero casuale
+        let newNum = casualNumbers(minNum, maxNum);
+        arr.push(newNum); 
+    }
+    return arr;
+};
 //Funzione che genera un numero random da 0 a 100;
 
 function casualNumbers(min, max){
