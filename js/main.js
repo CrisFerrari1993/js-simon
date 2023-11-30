@@ -16,6 +16,28 @@ let cover = document.getElementById('cover hidden');
 let saluto = 'Benvenuto a Simon, premi sul bottone per cominciare!';
 // saluto l'utente prima di coninciare la partita
 simonNumbers.innerHTML = saluto;
+//genero un evento al click del bottone
+play.addEventListener('click', () => {
+    //svuoto il paragrafo per prepararlo all area di gioco
+    simonNumbers.innerHTML='';
+    //creo una variabile col valore 30
+    let seconds = 30;
+    let userNum = [];
+    let score = 0;
+    let numChecked = [];
+    //creo un loup a tempo 
+    const clock = setInterval(
+        () => {
+            if(seconds === 0){
+                simonNumbers.innerHTML = 'Tempo Scaduto!!!'
+                for(let i = 0; i < 5; i++){
+                    let userInput = parseInt(prompt('Inserisci i numeri che hai visto: '));
+                }
+            }
+        }
+    )
+    }
+);
 // Funzione che mette in un array 5 numeri
 function genArrRandomNum (minNum, maxNum, arrLenght) {
     //array da popolare 
