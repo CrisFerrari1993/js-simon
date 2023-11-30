@@ -13,7 +13,9 @@ let countDown = document.getElementById('timer');
 let risultato = document.getElementById('resoult');
 let simonNumbers = document.getElementById('simon-numbers');
 let cover = document.getElementById('cover hidden');
-
+let saluto = 'Benvenuto a Simon, premi sul bottone per cominciare!';
+// saluto l'utente prima di coninciare la partita
+simonNumbers.innerHTML = saluto;
 // Funzione che mette in un array 5 numeri
 function genArrRandomNum (minNum, maxNum, arrLenght) {
     //array da popolare 
