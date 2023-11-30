@@ -22,6 +22,7 @@ play.addEventListener('click', () => {
     simonNumbers.innerHTML='';
     //creo una variabile col valore 30
     let seconds = 30;
+    let numbers = genArrRandomNum(1, 100, 5);
     let userNum = [];
     let score = 0;
     let numChecked = [];
@@ -32,9 +33,23 @@ play.addEventListener('click', () => {
                 simonNumbers.innerHTML = 'Tempo Scaduto!!!'
                 for(let i = 0; i < 5; i++){
                     let userInput = parseInt(prompt('Inserisci i numeri che hai visto: '));
+                    userNum.push(userInput);
+
+                    if(numbers.includes(userNum[i])){
+                        score++
+                        risultato.innerHTML = 'Numeri indovinati: ' + numChecked;
+                        numChecked.push(userNum[i]);
+                    }
+                    risultato.innerHTML = 'Punteggio totale = ' + score;
                 }
+                clearInterval(clock);
+            } else {
+                simonNumbers.innerHTML = numbers;
+                seconds--;
+                countDown.innerHTML = seconds;
             }
-        }
+        },
+        1000
     )
     }
 );
