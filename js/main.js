@@ -7,3 +7,8 @@ Il layout lo decidete voi.
 Non perdetevi solo nei suoi dettagli da subito, ma date priorità a farlo funzionare.
 Poi se volete lo abbellite quanto volete, quando funziona tutto.
 */
+//Funzione che genera un numero random da 0 a 100;
+
+function casualNumbers(min, max){
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
