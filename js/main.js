@@ -7,6 +7,13 @@ Il layout lo decidete voi.
 Non perdetevi solo nei suoi dettagli da subito, ma date priorità a farlo funzionare.
 Poi se volete lo abbellite quanto volete, quando funziona tutto.
 */
+// Assegno alle variabili il valore dom per visualizzarle a schermo
+let play = document.getElementById('play');
+let countDown = document.getElementById('timer');
+let risultato = document.getElementById('resoult');
+let simonNumbers = document.getElementById('simon-numbers');
+let cover = document.getElementById('cover hidden');
+
 // Funzione che mette in un array 5 numeri
 function genArrRandomNum (minNum, maxNum, arrLenght) {
     //array da popolare 
